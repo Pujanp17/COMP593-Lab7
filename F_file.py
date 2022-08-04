@@ -3,6 +3,7 @@ from faker import Faker
 import sqlite3
 from datetime import datetime
 
+
 fake_data = Faker()
 
 name = fake_data.name();
@@ -10,10 +11,6 @@ address = fake_data.address();
 email = fake_data.email();
 age = fake_data.random_number(digits=2);
 date = fake_data.date_this_month()
-
-#profile = fake_data.simple_profile()
-#for K in range (0,200):
- #   print(K)
 
 con = sqlite3.connect('database.db')
 cur = con.cursor()
@@ -30,3 +27,8 @@ for i in cur.execute('SELECT name, address, email, age, date FROM table1'):
 
 con.commit()
 con.close()
+
+
+
+
+
